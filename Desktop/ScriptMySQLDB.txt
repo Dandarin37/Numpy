@@ -1,0 +1,309 @@
+CREATE DATABASE "KerbolSystem";
+/*-------------------------------------------------------
+Таблица объектов
+------------------------------------------------------
+*/
+DROP TABLE IF EXISTS Object_s;
+CREATE TABLE Object_s (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Name_obj varchar(255),
+	Type_obj varchar(255),
+	landing INT,
+	deltaV INT
+);
+/*
+----------------------------------------------------
+Список планет
+----------------------------------------------------
+*/
+
+DROP TABLE IF EXISTS Planets;
+CREATE TABLE Planets (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Name_Planet varchar(255),
+	Satelite INT
+);
+
+/*
+==========================================================
+Объекты:
+----------------------------------------------------------
+1.  Кербол / Kerbol star 0
+2.  Мохо / Moho planet 1
+3.  Ив / Eve planet 1
+4.  Джилли / Gilly Satelite 1
+5.  Кербин / Kerbin planet 1
+6.  Мун / Mun satelite 1
+7.  Минмус / Minmus satelite 1
+8.  Дюна / Duna planet 1
+9.  Айк / Ike satelite 1
+10. Дрес / Dres planet 1
+11. Джул / Jool planet 0
+12. Лейт / Laythe satelite 1
+13. Валл / Vall satelite 1
+14. Тило / Tylo satelite 1
+15. Боп / Bop satelite 1
+16. Пол / Pol satelite 1
+17. Иилу / Eeloo planet 1
+*/
+/*
+-------------------------------------------
+Вставка Данных в Таблицу Object_s
+------------------------------------------
+*/
+
+INSERT INTO Object_s (Name_obj, Type_obj, landing, deltaV) VALUES 
+	('Kerbol', 'star', 0, 91050),
+	('Moho',  'planet', 1, 8390),
+	('Eve', 'planet', 1, 13850),
+	('Gilly',  'Satelite', 1, 5020),
+	('Kerbin', 'planet', 1, 0),
+	('Mun', 'satelite', 1, 5150),
+	('Minmus', 'satelite', 1, 4670),
+	('Duna', 'planet', 1, 6540),
+	('Ike', 'satelite', 1, 5330),
+	('Dres', 'planet', 1, 6680),
+	('Jool', 'planet', 0, 22300),
+	('Laythe', 'satelite', 1, 10390),
+	('Vall', 'satelite', 1,7880),
+	('Tylo', 'satelite', 1, 9260),
+	('Bop', 'satelite', 1, 6840),
+	('Pol', 'satelite', 1, 6600),
+	('Eeloo', 'planet', 1, 7480);
+
+/*
+=========================================================================
+*/
+
+SELECT*FROM Object_s WHERE Type_obj like 'satelite';
+SELECT*FROM Object_s WHERE Type_obj like 'planet';
+SELECT*FROM Object_s WHERE Type_obj like 'star';
+
+/*
+------------------------------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+DROP TABLE IF EXISTS Kerbol;
+CREATE TABLE Kerbol (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Moho;
+CREATE TABLE Moho (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Eve ;
+CREATE TABLE Eve (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Gilly ;
+CREATE TABLE Gilly (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Kerbin;
+CREATE TABLE Kerbin (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Mun;
+CREATE TABLE Mun(
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Minmus;
+CREATE TABLE Minmus (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Duna;
+CREATE TABLE Duna (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Ike;
+CREATE TABLE Ike (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Dres;
+CREATE TABLE Dres (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Jool;
+CREATE TABLE Jool (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Laythe;
+CREATE TABLE Laythe (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Vall;
+CREATE TABLE Vall (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Tylo;
+CREATE TABLE Tylo (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Bop;
+CREATE TABLE Bop (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Pol;
+CREATE TABLE Pol (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+
+DROP TABLE IF EXISTS Eeloo;
+CREATE TABLE Eeloo (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	Gparam INT COMMENT 'Стандарт Гравит Параметр',
+	g INT COMMENT 'ускорение свободного падения',
+	V2 INT COMMENT 'вторая космическая скорость',
+	SphereG INT COMMENT 'Сфера тяготения',
+	Atmospher INT COMMENT 'наличие атмосферы',
+	Altatm INT COMMENT 'высота атмосферы',
+	Oxygen INT COMMENT 'Наличие кислорода'
+	
+);
+/*
+===========================================================
+*/
